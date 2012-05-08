@@ -1,0 +1,19 @@
+{
+  "name": "rackspace-shared-utils",
+  "version": "0.1.0",
+  "dependencies": {
+    "async": "0.1.18"
+  },
+  "devDependencies": {
+    "jshint": "0.5.9"
+  },
+  "scripts": {
+    "lint": "./scripts/lint.sh"
+  },
+  "licenses": [
+    {
+      "type": "Apache",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ]
+}
