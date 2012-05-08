@@ -2,7 +2,8 @@
   "name": "rackspace-shared-utils",
   "version": "0.1.0",
   "dependencies": {
-    "async": "0.1.18"
+    "async": "0.1.18",
+    "sprintf": "0.1.1"
   },
   "devDependencies": {
     "jshint": "0.5.9"
