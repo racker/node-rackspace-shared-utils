@@ -1,11 +1,20 @@
 {
   "name": "rackspace-shared-utils",
   "author": "Rackspace US, Inc.",
+  "contributors": [
+    "Tomaz Muraus <tomaz.muraus@rackspace.com>",
+    "Russell Haering <russell.haering@rackspace.com>",
+    "Paul Querna <pquerna@apache.org>",
+    "Dan Di Spaltro <daniel.dispaltro@rackspace.com>"
+  ],
   "version": "0.1.0",
   "homepage": "https://github.com/racker/node-rackspace-shared-utils",
   "repository": {
     "type": "git",
     "url": "git://github.com/racker/node-rackspace-shared-utils.git"
+  },
+  "directories": {
+    "lib": "lib"
   },
   "dependencies": {
     "async": "0.1.18",
