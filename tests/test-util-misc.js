@@ -1,4 +1,4 @@
-var misc = require('../lib/utils/misc');
+var misc = require('../lib/misc');
 
 
 exports['test_object_merge'] = function(test, assert) {

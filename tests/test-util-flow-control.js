@@ -1,6 +1,6 @@
 var async = require('async');
 
-var flowCtrl = require('../lib/utils/flow_control');
+var flowCtrl = require('../lib/flow_control');
 
 
 exports['test_retryOnError_success'] = function(test, assert) {
