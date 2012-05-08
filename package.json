@@ -13,6 +13,7 @@
     "type": "git",
     "url": "git://github.com/racker/node-rackspace-shared-utils.git"
   },
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib"
   },
