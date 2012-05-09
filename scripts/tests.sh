@@ -4,4 +4,5 @@ fi
 
 NODE_PATH=lib node_modules/whiskey/bin/whiskey \
   --tests "${TEST_FILES}" \
+  --custom-assert-module tests/assert.js \
   --real-time --sequential
