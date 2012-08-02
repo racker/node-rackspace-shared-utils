@@ -229,3 +229,40 @@ exports['test_DummyWork'] = function(test, assert) {
     test.finish();
   }, 100);
 };
+
+
+exports['test_setGauge'] = function(test, assert) {
+  assert.deepEqual(instruments.getGaugeMetric('foo'), {
+    label: 'foo',
+    value: 0
+  });
+
+  assert.deepEqual(instruments.getGaugeMetrics(), []);
+
+  assert.deepEqual(instruments.getMetrics(), {
+    work: [],
+    events: [],
+    gauges: []
+  });
+
+  instruments.setGauge('foo', 12);
+
+  assert.deepEqual(instruments.getGaugeMetric('foo'), {
+    label: 'foo',
+    value: 12
+  });
+
+  assert.deepEqual(instruments.getGaugeMetrics(), [{label: 'foo', value: 12}]);
+
+  assert.deepEqual(instruments.getMetrics(), {
+    work: [],
+    events: [],
+    gauges: [{label: 'foo', value: 12}]
+  });
+
+  instruments.shutdown();
+
+  assert.deepEqual(instruments.getGaugeMetrics(), []);
+
+  test.finish();
+};
