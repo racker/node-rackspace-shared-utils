@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "async": "0.1.18",
-    "sprintf": "0.1.1"
+    "sprintf": "0.1.1",
+    "request": "2.10.0"
   },
   "devDependencies": {
     "jshint": "0.5.9",
