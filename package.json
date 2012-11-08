@@ -5,9 +5,10 @@
     "Tomaz Muraus <tomaz.muraus@rackspace.com>",
     "Russell Haering <russell.haering@rackspace.com>",
     "Paul Querna <pquerna@apache.org>",
-    "Dan Di Spaltro <daniel.dispaltro@rackspace.com>"
+    "Dan Di Spaltro <daniel.dispaltro@rackspace.com>",
+    "Gary Dusbabek <gdusbabek@gmail.com"
   ],
-  "version": "0.1.14",
+  "version": "0.1.15",
   "homepage": "https://github.com/racker/node-rackspace-shared-utils",
   "repository": {
     "type": "git",
