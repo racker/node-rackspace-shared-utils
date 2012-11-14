@@ -87,3 +87,23 @@ exports['test_toRfc3339Date'] = function(test, assert) {
   test.finish();
 };
 
+exports['test_shellQuote'] = function(test, assert) {
+  var values = [
+    ['test', "'test'"],
+    [12345, "'12345'"],
+    [new Number(123456), "'123456'"],
+    [[1,2,3], "'1,2,3'"],
+    [new Array(1, 2, 3, 4), "'1,2,3,4'"],
+    [{'a': 'b'}, "'" + JSON.stringify({'a': 'b'}) + "'"],
+    ["'ponies'", "'\"'\"ponies\"'\"'"]
+  ];
+
+  values.forEach(function(tuple) {
+    var actual = misc.shellQuote(tuple[0]),
+        expected = tuple[1];
+
+    assert.equal(actual, expected);
+  });
+
+  test.finish();
+};
