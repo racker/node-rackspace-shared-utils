@@ -345,3 +345,10 @@ exports['test_uuid_forward_reverse'] = function(test, assert) {
 
   test.finish();
 };
+
+exports['test_get_from_timestamp_of_zero'] = function(test, assert) {
+  var zeroUUID = uuidFromTimestamp(0),
+      nowUUID = uuidFromTimestamp(Date.now());
+    assert.ok(Math.abs(nowUUID.getTimestamp() - zeroUUID.getTimestamp()) > 10000);
+    test.finish();
+}
