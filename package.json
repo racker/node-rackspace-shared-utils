@@ -8,7 +8,7 @@
     "Dan Di Spaltro <daniel.dispaltro@rackspace.com>",
     "Gary Dusbabek <gdusbabek@gmail.com"
   ],
-  "version": "0.1.20",
+  "version": "0.1.21",
   "homepage": "https://github.com/racker/node-rackspace-shared-utils",
   "repository": {
     "type": "git",
