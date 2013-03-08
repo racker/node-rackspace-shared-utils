@@ -296,3 +296,68 @@ exports['test_recordWork'] = function(test, assert) {
     test.finish();
   }, 100);
 };
+
+
+exports['test_runningCounter'] = function(test, assert) {
+  var rc = new instruments.RunningGauge('rc', 42);
+
+  assert.deepEqual(instruments.getGaugeMetric('rc'), {
+    label: 'rc',
+    value: 42
+  });
+
+  assert.deepEqual(instruments.getGaugeMetrics(), [{
+    label: 'rc',
+    value: 42
+  }]);
+
+  rc.incr();
+  assert.deepEqual(instruments.getGaugeMetric('rc'), {
+    label: 'rc',
+    value: 43
+  });
+
+  rc.incr(42);
+  assert.deepEqual(instruments.getGaugeMetric('rc'), {
+    label: 'rc',
+    value: 85
+  });
+
+  rc.incr(0);
+  assert.deepEqual(instruments.getGaugeMetric('rc'), {
+    label: 'rc',
+    value: 85
+  });
+
+  rc.decr(20);
+  assert.deepEqual(instruments.getGaugeMetric('rc'), {
+    label: 'rc',
+    value: 65
+  });
+
+  rc.decr();
+  assert.deepEqual(instruments.getGaugeMetric('rc'), {
+    label: 'rc',
+    value: 64
+  });
+
+  rc.decr(0);
+  assert.deepEqual(instruments.getGaugeMetric('rc'), {
+    label: 'rc',
+    value: 64
+  });
+
+  rc.reset();
+  assert.deepEqual(instruments.getGaugeMetric('rc'), {
+    label: 'rc',
+    value: 42
+  });
+
+  rc.reset(10);
+  assert.deepEqual(instruments.getGaugeMetric('rc'), {
+    label: 'rc',
+    value: 10
+  });
+
+  test.finish();
+};
