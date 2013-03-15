@@ -266,3 +266,33 @@ exports['test_setGauge'] = function(test, assert) {
 
   test.finish();
 };
+
+
+exports['test_recordWork'] = function(test, assert) {
+  var eventLabel = 'testRecordWork', finished = false,
+      recordWork,
+      callback = function(fin) {
+        finished = fin;
+      };
+
+  assert.equal(instruments.testFunctions.hasEventMetric(eventLabel), false);
+  assert.equal(instruments.testFunctions.hasWorkMetric(eventLabel), false);
+
+  recordWork = new instruments.RecordWork(eventLabel, callback);
+
+  assert.ok(instruments.testFunctions.hasEventMetric(eventLabel), false);
+  assert.ok(instruments.testFunctions.hasWorkMetric(eventLabel), false);
+
+  callback = recordWork.startWork().getCallback();
+
+  assert.ok(recordWork.work.startTime);
+  assert.strictEqual(recordWork.work.stopTime, null);
+
+  setTimeout(function() {
+    callback(true);
+    assert.ok(finished);
+    assert.ok(recordWork.work.stopTime);
+    instruments.shutdown();
+    test.finish();
+  }, 100);
+};
