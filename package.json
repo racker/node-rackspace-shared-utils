@@ -6,9 +6,10 @@
     "Russell Haering <russell.haering@rackspace.com>",
     "Paul Querna <pquerna@apache.org>",
     "Dan Di Spaltro <daniel.dispaltro@rackspace.com>",
-    "Gary Dusbabek <gdusbabek@gmail.com"
+    "Gary Dusbabek <gdusbabek@gmail.com>",
+    "Justin Gallardo <justin.gallardo@rackspace.com>"
   ],
-  "version": "0.1.21",
+  "version": "0.1.22",
   "homepage": "https://github.com/racker/node-rackspace-shared-utils",
   "repository": {
     "type": "git",
