@@ -283,7 +283,7 @@ exports['test_recordWork'] = function(test, assert) {
   assert.ok(instruments.testFunctions.hasEventMetric(eventLabel), false);
   assert.ok(instruments.testFunctions.hasWorkMetric(eventLabel), false);
 
-  callback = recordWork.startWork();
+  callback = recordWork.startWork().getCallback();
 
   assert.ok(recordWork.work.startTime);
   assert.strictEqual(recordWork.work.stopTime, null);
