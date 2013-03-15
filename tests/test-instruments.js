@@ -267,6 +267,7 @@ exports['test_setGauge'] = function(test, assert) {
   test.finish();
 };
 
+
 exports['test_recordWork'] = function(test, assert) {
   var eventLabel = 'testRecordWork', finished = false,
       recordWork,
@@ -274,13 +275,13 @@ exports['test_recordWork'] = function(test, assert) {
         finished = fin;
       };
 
-  assert.equal(instruments.hasEventMetric(eventLabel), false);
-  assert.equal(instruments.hasWorkMetric(eventLabel), false);
+  assert.equal(instruments.testFunctions.hasEventMetric(eventLabel), false);
+  assert.equal(instruments.testFunctions.hasWorkMetric(eventLabel), false);
 
   recordWork = new instruments.RecordWork(eventLabel, callback);
 
-  assert.ok(instruments.hasEventMetric(eventLabel), false);
-  assert.ok(instruments.hasWorkMetric(eventLabel), false);
+  assert.ok(instruments.testFunctions.hasEventMetric(eventLabel), false);
+  assert.ok(instruments.testFunctions.hasWorkMetric(eventLabel), false);
 
   callback = recordWork.startWork();
 
