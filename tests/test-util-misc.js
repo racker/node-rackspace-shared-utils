@@ -107,3 +107,9 @@ exports['test_shellQuote'] = function(test, assert) {
 
   test.finish();
 };
+
+exports['test_randstr'] = function(test, assert) {
+  var str = misc.randstr(32);
+  assert.equal(str.length, 32);
+  test.finish();
+};
