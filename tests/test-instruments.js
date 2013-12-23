@@ -298,18 +298,21 @@ exports['test_recordWork'] = function(test, assert) {
 };
 
 
-exports['test_timeFunction'] = function(test, assert) {
-  var eventLabel = 'testTimeFunction',
-      callback = function() {
+exports['test_timeAsyncFunction'] = function(test, assert) {
+  var eventLabel = 'testTimeAsyncFunction',
+      handler = function(callback) {
         assert.ok(instruments.testFunctions.hasWorkMetric(eventLabel));
+        callback();
+      },
+      finish = function() {
         instruments.shutdown();
         test.finish();
       };
 
   assert.equal(instruments.testFunctions.hasWorkMetric(eventLabel), false);
-  callback = instruments.timeFunction(eventLabel, callback);
+  handler = instruments.timeAsyncFunction(eventLabel, handler);
   assert.equal(instruments.testFunctions.hasWorkMetric(eventLabel), false);
-  setTimeout(callback, 100);
+  setTimeout(handler.bind(null, finish), 100);
 };
 
 
