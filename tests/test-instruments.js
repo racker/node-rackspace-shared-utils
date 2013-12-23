@@ -298,6 +298,21 @@ exports['test_recordWork'] = function(test, assert) {
 };
 
 
+exports['test_timeFunction'] = function(test, assert) {
+  var eventLabel = 'testTimeFunction',
+      callback = function() {
+        assert.ok(instruments.testFunctions.hasWorkMetric(eventLabel));
+        instruments.shutdown();
+        test.finish();
+      };
+
+  assert.equal(instruments.testFunctions.hasWorkMetric(eventLabel), false);
+  callback = instruments.timeFunction(eventLabel, callback);
+  assert.equal(instruments.testFunctions.hasWorkMetric(eventLabel), false);
+  setTimeout(callback, 100);
+};
+
+
 exports['test_runningCounter'] = function(test, assert) {
   var rc = new instruments.RunningGauge('rc', 42);
 
