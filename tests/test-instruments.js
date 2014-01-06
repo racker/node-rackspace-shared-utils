@@ -298,6 +298,24 @@ exports['test_recordWork'] = function(test, assert) {
 };
 
 
+exports['test_timeAsyncFunction'] = function(test, assert) {
+  var eventLabel = 'testTimeAsyncFunction',
+      handler = function(callback) {
+        assert.ok(instruments.testFunctions.hasWorkMetric(eventLabel));
+        callback();
+      },
+      finish = function() {
+        instruments.shutdown();
+        test.finish();
+      };
+
+  assert.equal(instruments.testFunctions.hasWorkMetric(eventLabel), false);
+  handler = instruments.timeAsyncFunction(eventLabel, handler);
+  assert.equal(instruments.testFunctions.hasWorkMetric(eventLabel), false);
+  setTimeout(handler.bind(null, finish), 100);
+};
+
+
 exports['test_runningCounter'] = function(test, assert) {
   var rc = new instruments.RunningGauge('rc', 42);
 
