@@ -9,7 +9,7 @@
     "Gary Dusbabek <gdusbabek@gmail.com>",
     "Justin Gallardo <justin.gallardo@rackspace.com>"
   ],
-  "version": "0.1.27",
+  "version": "0.1.28",
   "homepage": "https://github.com/racker/node-rackspace-shared-utils",
   "repository": {
     "type": "git",
