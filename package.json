@@ -1,13 +1,33 @@
 {
   "name": "rackspace-shared-utils",
-  "author": "Rackspace US, Inc.",
+  "author": {
+    "name": "Rackspace US, Inc."
+  },
   "contributors": [
-    "Tomaz Muraus <tomaz.muraus@rackspace.com>",
-    "Russell Haering <russell.haering@rackspace.com>",
-    "Paul Querna <pquerna@apache.org>",
-    "Dan Di Spaltro <daniel.dispaltro@rackspace.com>",
-    "Gary Dusbabek <gdusbabek@gmail.com>",
-    "Justin Gallardo <justin.gallardo@rackspace.com>"
+    {
+      "name": "Tomaz Muraus",
+      "email": "tomaz.muraus@rackspace.com"
+    },
+    {
+      "name": "Russell Haering",
+      "email": "russell.haering@rackspace.com"
+    },
+    {
+      "name": "Paul Querna",
+      "email": "pquerna@apache.org"
+    },
+    {
+      "name": "Dan Di Spaltro",
+      "email": "daniel.dispaltro@rackspace.com"
+    },
+    {
+      "name": "Gary Dusbabek",
+      "email": "gdusbabek@gmail.com"
+    },
+    {
+      "name": "Justin Gallardo",
+      "email": "justin.gallardo@rackspace.com"
+    }
   ],
   "version": "0.1.28",
   "homepage": "https://github.com/racker/node-rackspace-shared-utils",
@@ -40,5 +60,18 @@
       "type": "Apache",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
-  ]
+  ],
+  "bin": {
+    "gelf-tail": "bin/gelf-tail"
+  },
+  "readme": "# Rackspace Utility Functions\n\nShared Rackspace Node.js utility modules and functions.\n\n# Build status\n\n[![Build Status](https://secure.travis-ci.org/racker/node-rackspace-shared-utils.png)](http://travis-ci.org/racker/node-rackspace-shared-utils)\n\n\n# License\n\nThis library is distributed under the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0.html).\n",
+  "readmeFilename": "README.md",
+  "description": "Shared Rackspace Node.js utility modules and functions.",
+  "bugs": {
+    "url": "https://github.com/racker/node-rackspace-shared-utils/issues"
+  },
+  "_id": "rackspace-shared-utils@0.1.28",
+  "_shasum": "8036080d35b4678ea4a99364a04a03120747d9cc",
+  "_from": "rackspace-shared-utils@0.1.28",
+  "_resolved": "https://registry.npmjs.org/rackspace-shared-utils/-/rackspace-shared-utils-0.1.28.tgz"
 }
