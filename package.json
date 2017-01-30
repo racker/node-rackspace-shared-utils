@@ -43,9 +43,9 @@
   "dependencies": {
     "async": "0.1.18",
     "sprintf": "0.1.1",
-    "terminal": ">= 0.1.3",
-    "logmagic": ">= 0.1.4",
-    "underscore": ">= 1.6.0"
+    "terminal": "^0.1.3",
+    "logmagic": "^0.1.4",
+    "underscore": "^1.6.0"
   },
   "devDependencies": {
     "jshint": "0.5.9",
@@ -71,8 +71,8 @@
   "bugs": {
     "url": "https://github.com/racker/node-rackspace-shared-utils/issues"
   },
-  "_id": "rackspace-shared-utils@0.1.28",
+  "_id": "rackspace-shared-utils@0.1.29",
   "_shasum": "8036080d35b4678ea4a99364a04a03120747d9cc",
-  "_from": "rackspace-shared-utils@0.1.28",
-  "_resolved": "https://registry.npmjs.org/rackspace-shared-utils/-/rackspace-shared-utils-0.1.28.tgz"
+  "_from": "rackspace-shared-utils@0.1.29",
+  "_resolved": "https://registry.npmjs.org/rackspace-shared-utils/-/rackspace-shared-utils-0.1.29.tgz"
 }
