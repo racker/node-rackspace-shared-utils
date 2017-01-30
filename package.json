@@ -29,7 +29,7 @@
       "email": "justin.gallardo@rackspace.com"
     }
   ],
-  "version": "0.1.28",
+  "version": "0.1.29",
   "homepage": "https://github.com/racker/node-rackspace-shared-utils",
   "repository": {
     "type": "git",
@@ -43,8 +43,9 @@
   "dependencies": {
     "async": "0.1.18",
     "sprintf": "0.1.1",
-    "terminal": ">= 0.1.3",
-    "logmagic": ">= 0.1.4"
+    "terminal": "^0.1.3",
+    "logmagic": "^0.1.4",
+    "underscore": "^1.6.0"
   },
   "devDependencies": {
     "jshint": "0.5.9",
@@ -70,8 +71,8 @@
   "bugs": {
     "url": "https://github.com/racker/node-rackspace-shared-utils/issues"
   },
-  "_id": "rackspace-shared-utils@0.1.28",
-  "_shasum": "8036080d35b4678ea4a99364a04a03120747d9cc",
-  "_from": "rackspace-shared-utils@0.1.28",
-  "_resolved": "https://registry.npmjs.org/rackspace-shared-utils/-/rackspace-shared-utils-0.1.28.tgz"
+  "_id": "rackspace-shared-utils@0.1.29",
+  "_shasum": "4a363a4455902e655e028559068f9899d57b0618",
+  "_from": "rackspace-shared-utils@0.1.29",
+  "_resolved": "https://registry.npmjs.org/rackspace-shared-utils/-/rackspace-shared-utils-0.1.29.tgz"
 }
