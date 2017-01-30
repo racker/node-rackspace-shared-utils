@@ -29,7 +29,7 @@
       "email": "justin.gallardo@rackspace.com"
     }
   ],
-  "version": "0.1.28",
+  "version": "0.1.29",
   "homepage": "https://github.com/racker/node-rackspace-shared-utils",
   "repository": {
     "type": "git",
@@ -44,7 +44,8 @@
     "async": "0.1.18",
     "sprintf": "0.1.1",
     "terminal": ">= 0.1.3",
-    "logmagic": ">= 0.1.4"
+    "logmagic": ">= 0.1.4",
+    "underscore": "^1.6.0"
   },
   "devDependencies": {
     "jshint": "0.5.9",
