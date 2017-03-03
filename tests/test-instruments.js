@@ -379,3 +379,29 @@ exports['test_runningCounter'] = function(test, assert) {
 
   test.finish();
 };
+
+exports['test_find_metrics'] = function(test, assert) {
+  /* Testing findGauges */
+  instruments.setGauge('foo.bar.tex', 12);
+  instruments.setGauge('foo.bike.tex', 13);
+
+  assert.deepEqual(instruments.findGaugeMetrics('foo.*'), ['foo.bar.tex', 'foo.bike.tex']);
+  assert.deepEqual(instruments.findGaugeMetrics('foo.*.tex'), ['foo.bar.tex', 'foo.bike.tex']);
+  assert.deepEqual(instruments.findGaugeMetrics('foo.bar.*'), ['foo.bar.tex']);
+
+  /* Testing findEvents */
+  instruments.recordEvent('test.event.1');
+  instruments.recordEvent('test.event.2');
+  instruments.recordEvent('test.event');
+  assert.deepEqual(instruments.findEventMetrics('test.event'), ['test.event']);
+  assert.deepEqual(instruments.findEventMetrics('test.event.*'), ['test.event.1', 'test.event.2', 'test.event']);
+
+  /* Testing findWorks */
+  instruments.measureWork('test1.work.1', 10);
+  instruments.measureWork('test2.work.2', 11);
+  instruments.measureWork('test3.work', 7);
+  assert.deepEqual(instruments.findWorkMetrics('*.*.2'), ['test2.work.2']);
+  assert.deepEqual(instruments.findWorkMetrics('*.work.*'), ['test1.work.1', 'test2.work.2', 'test3.work']);
+  instruments.shutdown();
+  test.finish();
+};
