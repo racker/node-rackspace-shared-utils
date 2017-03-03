@@ -26,6 +26,28 @@ exports['test_empty_object_merge'] = function(test, assert) {
   test.finish();
 };
 
+exports['test_object_extend'] = function(test, assert) {
+  var a = {red: 'fish'},
+      b = {blue: 'fish'},
+      c = {red: 'fish', blue: 'fish'},
+      d = {red: 'fish'},
+      whitelist = ['red'],
+      whitelistNoKey = ['green'],
+      out;
+
+  out = misc.extend({}, a, b);
+  assert.deepEqual(c, out);
+  out = misc.extend({}, a, b, []);
+  assert.deepEqual(c, out);
+  out = misc.extend({}, a, b, whitelist);
+  assert.deepEqual(d, out);
+  out = misc.extend(a, b, whitelist);
+  assert.deepEqual(a, out);
+  out = misc.extend({}, a, b, whitelistNoKey);
+  assert.deepEqual({}, out);
+  test.finish();
+};
+
 exports['test_indent'] = function(test, assert) {
   assert.equal(misc.indent('test', 1, ' '), ' test');
   assert.equal(misc.indent('test', 2, ' '), '  test');
